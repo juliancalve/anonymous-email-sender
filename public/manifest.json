@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AE-sender",
+  "name": "Anonymous email sender",
+  "description": "This software sends emails from a fixed email address, you can send files and text to whoever you want without having your own email",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#F5746F",
+  "background_color": "#3DBCB1"
 }
