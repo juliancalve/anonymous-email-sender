@@ -1,7 +1,8 @@
 {
-  "short_name": "AE-sender",
   "name": "Anonymous email sender",
-  "description": "This software sends emails from a fixed email address, you can send files and text to whoever you want without having your own email",
+  "short-name": "AE-Sender",
+  "dir": "ltr",
+  "lang": "en-US",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +20,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#F5746F",
   "background_color": "#3DBCB1"
