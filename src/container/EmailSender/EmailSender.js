@@ -44,7 +44,8 @@ const EmailSender = () => {
                         <div className='control has-icons-left has-icons-right'>
                             <input 
                             className='input'
-                            name='email' type='email'
+                            name='email'
+                            type='email'
                             placeholder='e.g. alex@example.com'
                             onChange={ handleChange }
                             />
