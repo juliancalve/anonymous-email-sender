@@ -41,19 +41,22 @@ const EmailSender = () => {
                 <form className='box'>
                     <div className='field'>
                         <label className='label'>Email</label>
-                        <div className='control'>
+                        <div className='control has-icons-left has-icons-right'>
                             <input 
                             className='input'
                             name='email' type='email'
                             placeholder='e.g. alex@example.com'
                             onChange={ handleChange }
                             />
+                            <span className="icon is-small is-left">
+                                <i className="fas fa-envelope"></i>
+                            </span>
                         </div>
                     </div>
 
                     <div className='field'>
                         <label className='label'>Subject</label>
-                        <div className='control'>
+                        <div className='control has-icons-left has-icons-right'>
                             <input
                             className='input'
                             type='text'
@@ -61,6 +64,9 @@ const EmailSender = () => {
                             placeholder='subject'
                             onChange={ handleChange }
                             />
+                            <span className="icon is-small is-left">
+                                <i className="fas fa-align-left"></i>
+                            </span>
                         </div>
                     </div>
                     <div className='field'>
@@ -77,7 +83,7 @@ const EmailSender = () => {
                     </div>
                     { showInvalidFields && <p className='has-text-danger'>All fields are required.</p> }
                     <div className='column has-text-centered'>
-                        <button className='button is-primary' type='button' onClick={ handleSubmit }>Send Email</button>
+                        <button className='button is-primary' type='button' onClick={ handleSubmit }>Send Mail</button>
                     </div>
                 </form>
             </div>
