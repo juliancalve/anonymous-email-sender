@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout/Layout';
+import Modal from '../../components/Modal/Modal';
 import { sendEmail } from '../../services/EmailSender';
 import './EmailSender.css';
 const EmailSender = () => {
@@ -11,6 +12,8 @@ const EmailSender = () => {
     } );
 
     const [ showInvalidFields, setShowInvalidFields ] = useState( false );
+
+    const [ showModal, setShowModal ] = useState( null );
 
     const handleChange = ( event ) => {
         setEmailOptions({
@@ -27,10 +30,11 @@ const EmailSender = () => {
                     alert( response.message )
                     setEmailOptions( { email: '', message: '', subject: '' } )
                 }
-            ).catch( error => { alert( error.message ) } );
+            ).catch( error => { setShowModal( !showModal ); } );
         }
         else {
             !showInvalidFields && setShowInvalidFields( true );
+            
         }
 
     }
@@ -46,6 +50,7 @@ const EmailSender = () => {
                             className='input'
                             name='email'
                             type='email'
+                            value={ emailOptions.email }
                             placeholder='e.g. alex@example.com'
                             onChange={ handleChange }
                             />
@@ -63,6 +68,7 @@ const EmailSender = () => {
                             type='text'
                             name='subject'
                             placeholder='subject'
+                            value={ emailOptions.subject }
                             onChange={ handleChange }
                             />
                             <span className="icon is-small is-left">
@@ -78,6 +84,7 @@ const EmailSender = () => {
                             type='text'
                             name='message'
                             placeholder='Message'
+                            value={ emailOptions.message }
                             onChange={ handleChange }>
                             </textarea>
                         </div>
@@ -88,6 +95,10 @@ const EmailSender = () => {
                     </div>
                 </form>
             </div>
+            <Modal
+            showModal={ showModal }>
+                <h1>Error</h1>
+            </Modal>
             
         </Layout>
     )
