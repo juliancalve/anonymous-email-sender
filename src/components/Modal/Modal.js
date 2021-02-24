@@ -17,15 +17,17 @@ const Modal = ( { children, accept, cancel, showModal } ) => {
     }
 
     return(
-        <div class="modal" id={ modalId }>
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <section class="modal-card-body">
-                    { children }
+        <div className="modal" id={ modalId }>
+            <div className="modal-background"></div>
+            <div className="modal-card">
+                <section className="modal-card-body">
+                    <div className="modal__body">
+                        { children }
+                    </div>
                 </section>
-                <footer class="modal-card-foot">
+                <footer className="modal-card-foot">
                     { accept && <button
-                    class="button is-success"
+                    className="button is-success"
                     onClick={ () => {
                         accept.action && accept.action();
                         toggleModal();
@@ -33,7 +35,7 @@ const Modal = ( { children, accept, cancel, showModal } ) => {
                         { accept.label || 'Accept' }
                     </button> }
                     <button
-                    class="button"
+                    className="button"
                     onClick={ () => {
                         cancel?.action && cancel.action();
                         toggleModal();
